@@ -1,2 +1,2 @@
-# Bevis-Fort.Analys
-Bevis inom kursen Fortsatt Analys på CTH
+# Proofs
+Proof for the course MVE700 (fortsatt analys)
