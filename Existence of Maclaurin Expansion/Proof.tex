@@ -1,0 +1,95 @@
+\documentclass{article}
+
+\usepackage[swedish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Bevis av existens av Maclaurin utveckling}
+\author{Marcus Persson}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{\underline{Lemma 1: Cauchy's medelvärdessats}}
+
+Antag att $g$ och $h$ är kontinuerliga på intervallet
+$I=[a,b]$, där $a<b$, och deriverbara på $(a,b)$.
+Då existerar minst ett $\xi \in (a,b)$ sådant att
+
+\begin{equation*}
+    (g(b)-g(a))h'(\xi)
+    =
+    (h(b)-h(a))g'(\xi).
+\end{equation*}
+
+\section*{\underbar{Bevis: existens av Maclaurin utveckling}}
+
+Låt $g,h$ vara två kontinuerliga funktioner på intervallet $I=[0,x]$, där $0<x$, och deriverbara på $(0,x)$ där följande gäller:
+
+\begin{equation}
+    g(t) = \sum_{k=0}^{n}\frac{f^{(k)}(t)}{k!}(x-t)^k
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+g'(t)
+&=
+\sum_{k=0}^{n}\frac{f^{(k+1)}(t)}{k!}(x-t)^k
+-
+\sum_{k=1}^{n}\frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1}\\
+&=
+\sum_{k=0}^{n}\frac{f^{(k+1)}(t)}{k!}(x-t)^k
+-
+\sum_{k=0}^{n-1}\frac{f^{(k+1)}(t)}{k!}(x-t)^k\\
+&=
+\frac{f^{(n+1)}(t)}{n!}(x-t)^n.
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+    h(t) = (x-t)^{n+1}
+\end{equation}
+
+\begin{equation}
+    h'(t) = -(n+1)(x-t)^n
+\end{equation}
+
+\begin{equation}
+    g(0) = p_{n}(x)
+\end{equation}
+
+\begin{equation}
+    g(x) = f(x)
+\end{equation}
+
+\noindent Vi använder oss av Cauchy's medelvärdessats där $\xi = \theta x$ och $0 < \theta < 1$, då följer:
+
+\begin{equation}
+\begin{gathered}
+    (g(x)-g(0))h'(\xi)
+    =
+    (h(x)-h(0))g'(\xi)\\
+    \Leftrightarrow\\
+    (f(x)-p_n(x))(-(n+1)(x-\xi)^n)
+    =
+    -x^{n+1}\frac{f^{(n+1)}(\xi)}{n!}(x-\xi)^n\\
+    \Leftrightarrow\\
+    f(x)-p_n(x)
+    =
+    \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-\xi)^{n+1}\\
+    \Leftrightarrow\\
+    f(x)
+    =
+    p_n(x) + \frac{f^{(n+1)}(\xi)}{(n+1)!}(x-\xi)^{n+1}
+\end{gathered}
+\end{equation}
+
+Eftersom $\xi = \theta x$ och $0<\theta<1$ $\exists$ Maclaurin utveckling. 
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\end{document}
