@@ -1,0 +1,128 @@
+\documentclass{article}
+
+\usepackage[swedish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Lösningsformeln för en homogen linjär differentialekvation av ordning 2 med konstanta koefficienter}
+\author{Marcus Persson}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{\underbar{Sats}}
+\noindent Lösningen till en homogen linjär differentialekvation av ordning 2 med konstant koefficienter $a,b \in \mathbb{R}$ till $y''+ay'+by = 0$, där $r_1,r_2$ är röterna till ekvationen, sådan att lösningarna blir:
+
+\begin{equation}
+    y = Ae^{r_1x} + Be^{r_2x},
+    \quad r_1 \neq r_2,\quad A,B \in \mathbb{R}
+\end{equation}
+
+\begin{equation}
+    y = (Ax+B)e^{r_1x},
+    \quad r_1 = r_2, \quad A,B \in \mathbb{R}
+\end{equation}
+
+\section*{\underbar{Bevis}}
+
+Låt $y,z$ vara två deriverbar funktion med avsende på $x$, på något intervall $I$, sådan att:
+
+\begin{equation}
+    y = ze^{wx}, 
+    \quad w \in \mathbb{R}
+\end{equation}
+
+\begin{equation}
+\left\{
+\begin{aligned}
+    y &= ze^{wx},\\
+    y' &= (z'+wz)e^{wx},\\
+    y'' &= (z''+2wz'+w^2z)e^{wx}.
+\end{aligned}
+\right.
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+    y''+ay'+by = 0\\
+    \Leftrightarrow\\
+    (z''+(2w+a)z'+(w^2+aw+b)z)e^{wx} = 0
+\end{gathered}
+\end{equation}
+
+\noindent Notera att $e^{wx} \neq 0$, då ser vi till att välja $w=r_1$ sådan att $w^2+aw+b=0$. Vi kan då skriva det som $(w-r_1)(w-r_2)=0$, då följer att $a=-(r_1+r_2)$ och ekvationen blir:
+
+\begin{equation}
+\begin{gathered}
+    (z''+(2w+a)z'+(w^2+aw+b)z)e^{wx} = 0\\
+    \Leftrightarrow\\
+    z''+(r_1-r_2)z'=0
+\end{gathered}
+\end{equation}
+
+\noindent Vi löser det som en homogen första ordnings differentialekvation med konstant koefficienter, där $P(x)=r_1-r_2$ och $Q(x)=0$, sådan att:
+
+\begin{equation}
+    \mu(x) = e^{\int P(x)dx} = e^{(r_1-r_2)x} 
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+    z' = (\mu(x))^{-1}\int \mu(x)Q(x) + (\mu(x))^{-1}C,
+    \quad C \in \mathbb{R}\\
+    \Leftrightarrow\\
+    z' = Ce^{(r_2-r_1)x}\\
+\end{gathered}
+\end{equation}
+
+\subsection*{\underbar{Fall 1 ($r_1 \neq r_2$):}}
+
+\begin{equation}
+    z' = Ce^{(r_2-r_1)x}
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+    z = \int zdx = \int Ce^{(r_2-r_1)x}dx
+    = 
+    \frac{C}{r_2-r_1}e^{(r_2-r_1)x} + A,
+    \quad A \in \mathbb{R}
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+    y = ze^{r_1x}\\
+    \Leftrightarrow\\
+    y = Be^{(r_2-r_1)x}e^{r_1x} + Ae^{r_1x},\quad B = \frac{C}{r_2-r_1}\\
+    \Leftrightarrow\\
+    y = Ae^{r_1x} + Be^{r_2x}
+\end{gathered}
+\end{equation}
+
+\subsection*{\underbar{Fall 2 ($r_1 = r_2$):}}
+
+\begin{equation}
+    z' = A, \quad A = C
+\end{equation}
+
+\begin{equation}
+    z = \int zdx = \int Adx = Ax + B
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+    y = ze^{r_1x}\\
+    \Leftrightarrow\\
+    y = (Ax + B)e^{r_1x}
+\end{gathered}
+\end{equation}
+
+\noindent Där av $\exists$ lösningsformeln för en homogen linjär differentialekvation av ordning 2 med konstanta koefficienter
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\end{document}
