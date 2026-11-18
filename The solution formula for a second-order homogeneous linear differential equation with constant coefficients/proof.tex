@@ -16,12 +16,16 @@
 
 \begin{equation}
     y = Ae^{r_1x} + Be^{r_2x},
-    \quad r_1 \neq r_2,\quad A,B \in \mathbb{R}
+    \quad r_1 \neq r_2,
+    \quad r_1,r_2 \in \mathbb{C},
+    \quad A,B \in \mathbb{C}
 \end{equation}
 
 \begin{equation}
     y = (Ax+B)e^{r_1x},
-    \quad r_1 = r_2, \quad A,B \in \mathbb{R}
+    \quad r_1 = r_2, 
+    \quad r_1,r_2 \in \mathbb{C},
+    \quad A,B \in \mathbb{C}
 \end{equation}
 
 \section*{\underbar{Bevis}}
@@ -30,7 +34,7 @@ Låt $y,z$ vara två deriverbar funktion med avsende på $x$, på något interva
 
 \begin{equation}
     y = ze^{wx}, 
-    \quad w \in \mathbb{R}
+    \quad w \in \mathbb{C}
 \end{equation}
 
 \begin{equation}
@@ -70,7 +74,7 @@ Låt $y,z$ vara två deriverbar funktion med avsende på $x$, på något interva
 \begin{equation}
 \begin{gathered}
     z' = (\mu(x))^{-1}\int \mu(x)Q(x) + (\mu(x))^{-1}C,
-    \quad C \in \mathbb{R}\\
+    \quad C \in \mathbb{C}\\
     \Leftrightarrow\\
     z' = Ce^{(r_2-r_1)x}\\
 \end{gathered}
@@ -87,7 +91,7 @@ Låt $y,z$ vara två deriverbar funktion med avsende på $x$, på något interva
     z = \int zdx = \int Ce^{(r_2-r_1)x}dx
     = 
     \frac{C}{r_2-r_1}e^{(r_2-r_1)x} + A,
-    \quad A \in \mathbb{R}
+    \quad A \in \mathbb{C}
 \end{gathered}
 \end{equation}
 
@@ -124,5 +128,10 @@ Låt $y,z$ vara två deriverbar funktion med avsende på $x$, på något interva
 \begin{flushright}
     $\blacksquare$
 \end{flushright}
+
+\subsection*{\underbar{Notera complexa koefficienter och röter:}}
+
+\noindent Om $r_1,r_2,A,B \in \mathbb{C} \backslash  \mathbb{R}$ kan $y$ skriva om i en fullt reell form. 
+
 
 \end{document}
