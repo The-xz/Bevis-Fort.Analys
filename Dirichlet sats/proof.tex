@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{time}
+\usepackage[swedish]{babel}
+
+\title{Dirichlets test för serier}
+\author{Marcus Persson}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{\underbar{Sats:}}
+
+För två talföljder $(a_k)$ och $(b_k)$, så om $(b_k)$ är begränsad, $|b_k| \leq M$, $M \in \mathbb{R}$ och $(a_k)$ är avtagande emot $0$, då följer att:
+
+\begin{equation*}
+    \sum_{k=1}^{n}a_kb_k \text{ konvergerar då } n \rightarrow \infty
+\end{equation*}
+
+\noindent Då gäller även att serien, $s$, konvergerar emot $|s|\leq Ma_1$
+
+
+\section*{\underbar{Bevis:}}
+
+Låt $S_n=\sum_{k=1}^{n}a_k b_k$ och $B_n=\sum_{k=1}^{n}b_k$ och skriver om de på följande sätt:
+
+\begin{equation}
+\label{1}
+    \sum_{k=1}^{n}a_k b_k = a_1 b_1 + a_n b_n + \sum_{k=2}^{n-1}a_k b_k
+\end{equation}
+
+\begin{equation}
+\label{2}
+    b_k = B_k - B_{k-1},\ b_1 = B_1,\ b_n = B_n - B_{n-1} 
+\end{equation}
+
+\noindent Med (\ref{2}) kan vi nu skriva om (\ref{1}) på följande sätt:
+
+\begin{equation*}
+\begin{gathered}
+    a_1 b_1 + a_n b_n + \sum_{k=2}^{n-1}a_k b_k\\
+    \Leftrightarrow\\
+    a_1 B_1 + a_n(B_n - B_{n-1}) + \sum_{k=2}^{n-1}a_k(B_k-B_{k-1})\\
+    \Leftrightarrow\\
+    a_1 B_1 + a_n B_n - a_n B_{n-1} + \sum_{k=2}^{n-1}a_k(B_k-B_{k-1})\\
+    \Leftrightarrow\\
+    a_1 B_1 + a_n B_n - a_n B_{n-1} + \sum_{k=2}^{n-1}a_k B_k - a_k B_{k-1}\\
+    \Leftrightarrow\\
+    a_1 B_1 + a_n B_n - a_n B_{n-1} + \sum_{k=2}^{n-1}a_k B_k - \sum_{k=2}^{n-1}a_k B_{k-1}\\
+    \Leftrightarrow\\
+    a_n B_n + \sum_{k=1}^{n-1}a_k B_k - \sum_{k=2}^{n}a_k B_{k-1}\\
+    \Leftrightarrow\\
+    a_n B_n + \sum_{k=1}^{n-1}a_k B_k - \sum_{k=1}^{n-1}a_{k+1} B_{k}\\
+    \Leftrightarrow\\
+    a_n B_n + \sum_{k=1}^{n-1}B_k(a_k-a_{k+1})
+\end{gathered}
+\end{equation*}
+
+\noindent Eftersom $a_n$ är avtagande emot $0$ följer att $a_n B_n \rightarrow 0$ när $n \rightarrow \infty$ och $|B_n| \leq M$
+
+\begin{equation*}
+    \Rightarrow \sum_{k=1}^{n-1}B_k(a_k - a_{k+1}) \leq M \sum_{k=1}^{n-1}a_k - a_{k+1} = M(a_1 - a_{n})
+\end{equation*}
+
+\noindent När $n \rightarrow \infty \Rightarrow M(a_1 - a_n) = M a_1$ och där av följer:
+
+\begin{equation*}
+    |S| \leq M a_1, \quad S = \sum_{k=1}^{\infty}a_k b_k
+\end{equation*}
+
+\begin{flushright}
+    $\blacksquare$
+\end{flushright}
+
+\end{document}
